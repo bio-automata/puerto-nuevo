@@ -60,4 +60,5 @@ public class Random {
             return 2/(b-a);
         }
     }
+
 }
