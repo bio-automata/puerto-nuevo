@@ -14,6 +14,7 @@ public class Main {
         System.out.println(containerShip2.getNome());
 
         // simular chegadas de navios
+
         // simular chegadas de caminhoes
 
     }
