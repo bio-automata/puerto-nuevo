@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Created by dicus on 28/04/17.
  */
 abstract public class Event {
+
     private double occurrenceTime;
     private double duration;
     private ArrayList<Event> dispachedEvents;           //os eventos desencadeados pela conclusão do evento
