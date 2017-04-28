@@ -47,10 +47,17 @@ public class Random {
     }
 
     public double triangular(double a, double b, double c){
-        double r;
+        double x;
 
-        r =this.percentual();
-
-        return 0;
+        x = this.percentual();
+        if(x>=a && x<c){
+            return (2*(x-a))/((b-a)*(c-a));
+        }
+        if(x>c && x<=b){
+            return (2*(b-x))/((b-a)*(b-c));
+        }
+        else{
+            return 2/(b-a);
+        }
     }
 }
