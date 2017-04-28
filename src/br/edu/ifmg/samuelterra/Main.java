@@ -10,6 +10,7 @@ public class Main {
         System.out.println(containerShip.getNome());
 
         ContainerShip containerShip2 = new ContainerShipFactory().cria(6);
+
         System.out.println(containerShip2.getNome());
 
         // simular chegadas de navios
