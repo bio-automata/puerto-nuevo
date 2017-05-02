@@ -15,7 +15,7 @@ public class ContainerShipFactory {
     private static final int SMALL_FEEDER = 5;
     private static final int ULTRA_LARGE  = 6;
 
-    public ContainerShip cria (int tipo){
+    public Navio cria (int tipo){
 
         if (tipo == FEEDER)
             return new Feeder();

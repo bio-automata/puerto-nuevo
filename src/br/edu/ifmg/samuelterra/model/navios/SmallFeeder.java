@@ -3,7 +3,7 @@ package br.edu.ifmg.samuelterra.model.navios;
 /**
  * Created by samuel on 13/03/17.
  */
-public class SmallFeeder extends ContainerShip {
+public class SmallFeeder extends Navio {
 
     public SmallFeeder() {
         setNome("Small Feedder");

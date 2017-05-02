@@ -3,7 +3,7 @@ package br.edu.ifmg.samuelterra.model.navios;
 /**
  * Created by samuel on 13/03/17.
  */
-public class NewPanamax extends ContainerShip {
+public class NewPanamax extends Navio {
 
     public NewPanamax() {
         setNome("New Panamax");

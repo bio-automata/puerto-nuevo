@@ -3,7 +3,7 @@ package br.edu.ifmg.samuelterra.model.navios;
 /**
  * Created by samuel on 13/03/17.
  */
-public class PostPanamax extends ContainerShip {
+public class PostPanamax extends Navio {
 
     public PostPanamax() {
         setNome("Post Panamax");

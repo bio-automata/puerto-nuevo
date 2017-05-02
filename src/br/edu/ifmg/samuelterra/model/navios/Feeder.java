@@ -3,7 +3,7 @@ package br.edu.ifmg.samuelterra.model.navios;
 /**
  * Created by samuel on 13/03/17.
  */
-public class Feeder extends ContainerShip {
+public class Feeder extends Navio {
 
     public Feeder() {
         setNome("Feedder");

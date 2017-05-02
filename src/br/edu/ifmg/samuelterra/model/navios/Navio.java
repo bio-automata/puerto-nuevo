@@ -3,7 +3,7 @@ package br.edu.ifmg.samuelterra.model.navios;
 /**
  * Created by samuel on 13/03/17.
  */
-public abstract class ContainerShip {
+public abstract class Navio {
 
     private String nome;
     private String descricao;
