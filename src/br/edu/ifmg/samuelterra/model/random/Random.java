@@ -4,6 +4,14 @@ package br.edu.ifmg.samuelterra.model.random;
  * Created by dicus on 28/04/17.
  */
 public class Random {
+    public static final int UNIFORM = 0;
+    public static final int UNIFORMRANGE = 1;
+    public static final int PERCENTUAL = 2;
+    public static final int NORMAL = 3;
+    public static final int EXPONENTIAL = 4;
+    public static final int TRIANGULAR = 5;
+    public static final int POISSON = 6;
+
     private long A = 69069;
     private int C = 1;
     private long M = (long)Math.pow(2, 32);
@@ -24,6 +32,11 @@ public class Random {
         return this.uniform()%n;
     }
 
+    public long uniform(long i, long n){
+        //this.currentValue = (long)(A*this.currentValue+C)%M;
+        return i+this.uniform()%(n-i);
+    }
+
     public double percentual(){
         //this.currentValue = (C*this.currentValue+A)%M;
         return (double)this.uniform()/M;
@@ -42,7 +55,7 @@ public class Random {
         return mean+variancy*( ( (sum-(n/2)) / ((Math.sqrt(n/12.0)) ) ) );
     }
 
-    public double exponencial(double lambda){
+    public double exponential(double lambda){
         return -(1.0/lambda)*Math.log(1.0-this.percentual());
     }
 
@@ -60,5 +73,4 @@ public class Random {
             return 2/(b-a);
         }
     }
-
 }
