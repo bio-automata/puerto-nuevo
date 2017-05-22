@@ -1,9 +1,9 @@
-package br.edu.ifmg.samuelterra.model.navios;
+package br.edu.ifmg.samuelterra.model.entities.ship;
 
 /**
  * Created by samuel on 13/03/17.
  */
-public class PostPanamax extends Navio {
+public class PostPanamax extends Ship {
 
     public PostPanamax() {
         setNome("Post Panamax");

@@ -7,10 +7,10 @@ import java.util.ArrayList;
 /**
  * Created by dicus on 07/05/17.
  */
-public class EntityList {
+public class EntitySet {
     private ArrayList<Entity> entityQueue;
 
-    public EntityList(){
+    public EntitySet(){
         this.entityQueue = new ArrayList<>();
     }
 

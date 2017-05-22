@@ -1,9 +1,9 @@
-package br.edu.ifmg.samuelterra.model.navios;
+package br.edu.ifmg.samuelterra.model.entities.ship;
 
 /**
  * Created by samuel on 13/03/17.
  */
-public class Panamax extends Navio {
+public class Panamax extends Ship {
 
     public Panamax() {
         setNome("Panamax");

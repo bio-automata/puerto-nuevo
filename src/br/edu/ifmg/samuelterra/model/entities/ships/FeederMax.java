@@ -1,9 +1,9 @@
-package br.edu.ifmg.samuelterra.model.navios;
+package br.edu.ifmg.samuelterra.model.entities.ship;
 
 /**
  * Created by samuel on 13/03/17.
  */
-public class FeederMax extends Navio {
+public class FeederMax extends Ship {
 
     public FeederMax() {
         setNome("Feedder Max");
