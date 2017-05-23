@@ -17,7 +17,9 @@ public class Main {
         Navio containerShip2 = new ContainerShipFactory().cria(6);
         System.out.println(containerShip2.getNome());*/
 
-        Queue<Navio> naviosChegada;
+
+        // ver se pode mudar tudo pra contador
+        Queue<br.edu.ifmg.samuelterra.model.entities.ship.Ship> naviosChegada;
         Queue<Navio> naviosAguardandoDescarregar;
         Queue<Navio> naviosSaida;
         Queue<Carreta> filaCarretaPorGrua;

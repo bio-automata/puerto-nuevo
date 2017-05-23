@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 abstract public class Event {
 
+    private int id;
     private double occurrenceTime;
     private double duration;
     private ArrayList<Event> dispachedEvents;           //os eventos desencadeados pela conclusão do evento
@@ -46,5 +47,13 @@ abstract public class Event {
 
     public void addDispachedEvent(int i, Event event){
         this.dispachedEvents.add(i, event);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
