@@ -1,10 +1,8 @@
-package br.edu.ifmg.samuelterra.model.sistema;
+package br.edu.ifmg.samuelterra.model.entities;
 
 /**
  * Created by dicus on 07/05/17.
  */
-public class Entity {
-    private int status;
-
-
+public class entityList {
+    private String status;
 }
