@@ -1,11 +1,12 @@
-package br.edu.ifmg.samuelterra.model.system.subcollections;
+package br.edu.ifmg.samuelterra.model.system.collections;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
 import java.util.ArrayList;
 
 /**
- * Created by dicus on 07/05/17.
+
+
  */
 public class EntityCollection {
     private ArrayList<Entity> entityCollection;
