@@ -1,4 +1,4 @@
-package br.edu.ifmg.samuelterra.model.system;
+package br.edu.ifmg.samuelterra.model.system.subcollections;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
