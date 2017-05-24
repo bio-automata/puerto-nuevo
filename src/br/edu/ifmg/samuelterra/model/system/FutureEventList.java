@@ -1,4 +1,4 @@
-package br.edu.ifmg.samuelterra.model.sistema;
+package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.events.Event;
 import java.util.ArrayList;

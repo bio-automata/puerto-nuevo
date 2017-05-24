@@ -1,11 +1,11 @@
-package br.edu.ifmg.samuelterra.model.entities.ship;
+package br.edu.ifmg.samuelterra.model.entities.ships;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
 /**
  * Created by samuel on 13/03/17.
  */
-public abstract class Ship extends Entity{
+public abstract class Ship extends Entity {
 
     private String nome;
     private String descricao;

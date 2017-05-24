@@ -1,12 +1,15 @@
-package br.edu.ifmg.samuelterra.model.sistema;
+package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
 import java.util.ArrayList;
 
 /**
- * Created by dicus on 07/05/17.
+ EntitySet is a class to group all system's entities in a
+ set of entities collections
+
  */
+
 public class EntitySet {
     private ArrayList<EntityCollection> entitySet;
 
@@ -14,15 +17,24 @@ public class EntitySet {
         this.entitySet = new ArrayList<>();
     }
 
-    public void addEntity(EntityCollection collection){
+    public void addCollection (EntityCollection collection){
         this.entitySet.add(collection);
     }
-
-    public EntityCollection getEntity(int i){
-        return this.entitySet.get(i);
+    public void addEntity(int collection, Entity entity){
+        this.getCollection(collection).addEntity(entity);
     }
 
-    public void destroyEntity(int i){
+    public EntityCollection getCollection (int i){
+        return this.entitySet.get(i);
+    }
+    public Entity getEntity(int collection, int i){
+        return this.getCollection(collection).getEntity(i);
+    }
+
+    public void destroyCollection(int i){
         this.entitySet.remove(i);
+    }
+    public void destroyEntity(int collection, int i){
+        this.getCollection(collection).destroyEntity(i);
     }
 }
