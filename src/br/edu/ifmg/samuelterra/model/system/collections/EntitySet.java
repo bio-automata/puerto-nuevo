@@ -1,13 +1,13 @@
 package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
+import br.edu.ifmg.samuelterra.model.system.subcollections.EntityCollection;
 
 import java.util.ArrayList;
 
 /**
- EntitySet is a class to group all system's entities in a
- set of entities collections
-
+ EntitySet is a class to group all system's entities
+ in a set of entities collections
  */
 
 public class EntitySet {

@@ -1,6 +1,7 @@
 package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.entities.Entity;
+import br.edu.ifmg.samuelterra.model.system.subcollections.EntityList;
 
 import java.util.ArrayList;
 
