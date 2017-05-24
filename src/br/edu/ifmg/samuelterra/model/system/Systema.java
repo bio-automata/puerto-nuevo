@@ -1,5 +1,9 @@
 package br.edu.ifmg.samuelterra.model.system;
 
+
+import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
+import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
+
 /**
  * Created by dicus on 24/05/17.
  */

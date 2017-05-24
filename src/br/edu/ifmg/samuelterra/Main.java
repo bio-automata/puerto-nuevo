@@ -1,9 +1,11 @@
 package br.edu.ifmg.samuelterra;
 
+import br.edu.ifmg.samuelterra.controller.ReadFile;
 import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
 import br.edu.ifmg.samuelterra.model.entities.vehicles.Cart;
 import br.edu.ifmg.samuelterra.model.entities.Crane;
 
+import java.nio.file.Paths;
 import java.util.Queue;
 import java.util.Set;
 
@@ -27,6 +29,9 @@ public class Main {
         Set<Crane> setEquipes;
         Set<Crane> setCais;
         Set<Crane> setCarretas;
+
+        ReadFile readFile = new ReadFile();
+        readFile.readFile("/home/samuel/IdeaProjects/Puerto Nuevo/src/br/edu/ifmg/samuelterra/cenario.txt");
 
     }
 }
