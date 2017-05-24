@@ -1,8 +1,8 @@
 package br.edu.ifmg.samuelterra;
 
-import br.edu.ifmg.samuelterra.model.Carreta;
-import br.edu.ifmg.samuelterra.model.Grua;
-import br.edu.ifmg.samuelterra.model.navios.Navio;
+import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
+import br.edu.ifmg.samuelterra.model.entities.vehicles.Cart;
+import br.edu.ifmg.samuelterra.model.entities.Crane;
 
 import java.util.Queue;
 import java.util.Set;
@@ -11,24 +11,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*Navio containerShip = new ContainerShipFactory().cria(2);
+        /*Ship containerShip = new ContainerShipFactory().cria(2);
         System.out.println(containerShip.getNome());
 
-        Navio containerShip2 = new ContainerShipFactory().cria(6);
+        Ship containerShip2 = new ContainerShipFactory().cria(6);
         System.out.println(containerShip2.getNome());*/
 
+        Queue<Ship> naviosChegada;
+        Queue<Ship> naviosAguardandoDescarregar;
+        Queue<Ship> naviosSaida;
+        Queue<Cart> filaCarretaPorGrua;
+        Queue<Cart> filaCarretaAguardandoDescarregarContainerPatio;
 
-        // ver se pode mudar tudo pra contador
-        Queue<br.edu.ifmg.samuelterra.model.entities.ship.Ship> naviosChegada;
-        Queue<Navio> naviosAguardandoDescarregar;
-        Queue<Navio> naviosSaida;
-        Queue<Carreta> filaCarretaPorGrua;
-        Queue<Carreta> filaCarretaAguardandoDescarregarContainerPatio;
-
-        Set<Grua> setGruas;
-        Set<Grua> setEquipes;
-        Set<Grua> setCais;
-        Set<Grua> setCarretas;
+        Set<Crane> setGruas;
+        Set<Crane> setEquipes;
+        Set<Crane> setCais;
+        Set<Crane> setCarretas;
 
     }
 }

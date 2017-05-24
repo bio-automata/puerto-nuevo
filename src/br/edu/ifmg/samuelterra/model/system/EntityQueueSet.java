@@ -11,30 +11,30 @@ import java.util.ArrayList;
  Each queue is an especial form of an EntityList
  */
 
-public class EntityQueue{
+public class EntityQueueSet {
     private ArrayList<EntityList> entityQueue;
 
-    public EntityQueue(){
+    public EntityQueueSet(){
         this.entityQueue = new ArrayList<>();
     }
 
-    public void addEntity(int i, Entity entity){
-        this.entityQueue.get(i).addEntity(entity);
+    public void addEntity(int queue, Entity entity){
+        this.entityQueue.get(queue).addEntity(entity);
     }
 
-    public Entity getEntity(int i){
-        return this.entityQueue.get(i).getEntity();
+    public Entity getEntity(int queue){
+        return this.entityQueue.get(queue).getEntity();
     }
 
-    public void addEntityList(){
+    public void addEntityQueue(){
         this.entityQueue.add(new EntityList(EntityList.QUEUE));
     }
 
-    public void addEntityList(int i){
+    public void addEntityQueue(int i){
         this.entityQueue.add(i,new EntityList(EntityList.QUEUE));
     }
 
-    public EntityList getEntityList(int i){
+    public EntityList getEntityQueue(int i){
         return this.entityQueue.get(i);
     }
 }

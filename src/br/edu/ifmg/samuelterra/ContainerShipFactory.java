@@ -1,6 +1,6 @@
 package br.edu.ifmg.samuelterra;
 
-import br.edu.ifmg.samuelterra.model.navios.*;
+import br.edu.ifmg.samuelterra.model.entities.ships.*;
 
 /**
  * Created by samuel on 13/03/17.
@@ -15,7 +15,7 @@ public class ContainerShipFactory {
     private static final int SMALL_FEEDER = 5;
     private static final int ULTRA_LARGE  = 6;
 
-    public Navio cria (int tipo){
+    public Ship cria (int tipo){
 
         if (tipo == FEEDER)
             return new Feeder();

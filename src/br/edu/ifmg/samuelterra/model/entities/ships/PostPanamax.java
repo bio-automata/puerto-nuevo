@@ -1,4 +1,4 @@
-package br.edu.ifmg.samuelterra.model.entities.ship;
+package br.edu.ifmg.samuelterra.model.entities.ships;
 
 /**
  * Created by samuel on 13/03/17.

@@ -5,20 +5,17 @@ import java.util.ArrayList;
 /**
  * Created by dicus on 28/04/17.
  */
-abstract public class EventNote {
+abstract public class EventNotice {
     /*
-        event notice será uma ficha contendo
-        tempo de ocorrência
-        tempo de dureção (progressão temporal)
-        outros eventos ocasionados pelo termino deste evento
-        requisitos, de qual fila de entidades tomará recursos
-        requisitos, de qual fila de entidades tomará recursos
+        um event notice será uma ficha contendo
+
+
 
     */
 
     private double occurrenceTime;
     private double duration;
-    private ArrayList<EventNote> dispachedEvents;           //os eventos desencadeados pela conclusão do evento
+    private ArrayList<EventNotice> dispachedEvents;           //os eventos desencadeados pela conclusão do evento
 
 
     abstract public void consume();
@@ -41,19 +38,19 @@ abstract public class EventNote {
         this.duration = duration;
     }
 
-    public ArrayList<EventNote> getDispachedEvent(){
+    public ArrayList<EventNotice> getDispachedEvent(){
         return this.dispachedEvents;
     }
 
-    public EventNote getDispachedEvent(int i){
+    public EventNotice getDispachedEvent(int i){
         return this.dispachedEvents.get(i);
     }
 
-    public void addDispachedEvent(EventNote event){
+    public void addDispachedEvent(EventNotice event){
         this.dispachedEvents.add(event);
     }
 
-    public void addDispachedEvent(int i, EventNote event){
+    public void addDispachedEvent(int i, EventNotice event){
         this.dispachedEvents.add(i, event);
     }
 }
