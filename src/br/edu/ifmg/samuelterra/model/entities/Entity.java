@@ -5,4 +5,12 @@ package br.edu.ifmg.samuelterra.model.entities;
  */
 public class Entity {
     private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

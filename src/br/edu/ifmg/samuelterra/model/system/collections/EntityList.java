@@ -5,8 +5,14 @@ import br.edu.ifmg.samuelterra.model.entities.Entity;
 import java.util.ArrayList;
 
 /**
- * Created by dicus on 07/05/17.
+    EntityList
+
+    this is a data structure designed for store
+    consumable entity items, in other words,
+    once an item was accessed by the get method
+    it is purged from the entity list.
  */
+
 public class EntityList {
     public static int LIST = 0;
     public static int QUEUE = 1;
