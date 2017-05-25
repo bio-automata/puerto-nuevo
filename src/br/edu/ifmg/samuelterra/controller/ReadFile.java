@@ -20,6 +20,7 @@ public class ReadFile {
         try {
             FileReader arq = new FileReader(path);
             BufferedReader lerArq = new BufferedReader(arq);
+            String entidade;
 
             // lê a primeira linha
             String linha = lerArq.readLine();
@@ -27,10 +28,59 @@ public class ReadFile {
             // de repetição atingir o final do arquivo texto
             while (linha != null) {
                 //ignora as linhas que tem tamanho 0 (linhas vazias)
-                if (linha.length() != 0)
-                    System.out.println(String.valueOf(linha.charAt(0)));
+                if ((linha.length() != 0)&&(!linha.contains("#"))) {
+                    //System.out.println(linha);
+                    //System.out.println(String.valueOf(linha.charAt(0)));
+                    entidade = String.valueOf(linha.charAt(0));
 
-                linha = lerArq.readLine(); // lê da segunda até a última linha
+                    switch (entidade){
+                        case "G":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "N":{
+                            // Tempo de chegada de navios (EXPONENCIAL), em minutos
+                            // Exemplo: N CHG 0.003333
+                            String splitNavio [] = linha.split(" ");
+                            //tempoChegadaNavios = splitNavio[2];
+                            break;
+                        }
+                        case "E":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "Q":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "C":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "R":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "S":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "F":{
+                            //System.out.println("");
+                            break;
+                        }
+                        case "T":{
+                            //System.out.println("");
+                            break;
+                        }
+                        default:{
+                            //System.out.println("Entidade não identificada.");
+                            break;
+                        }
+                    }
+                }
+                // le a proxima linha
+                linha = lerArq.readLine();
             }
 
             arq.close();

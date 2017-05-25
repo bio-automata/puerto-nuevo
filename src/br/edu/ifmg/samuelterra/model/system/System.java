@@ -4,10 +4,10 @@ import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
 
 /**
-    Systema
+    System
  */
 
-public class Systema {
+public class System {
     private double clock;               //system clock
     EntitySet entitySet;                //conjunto de entidades do sistema
     EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
