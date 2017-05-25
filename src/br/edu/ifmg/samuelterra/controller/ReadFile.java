@@ -14,8 +14,6 @@ public class ReadFile {
     }
 
     public void readFile(String path) {
-
-
         System.out.printf("\nConteúdo do arquivo texto:\n");
         try {
             FileReader arq = new FileReader(path);

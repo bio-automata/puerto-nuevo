@@ -1,20 +1,34 @@
 package br.edu.ifmg.samuelterra.model.system;
 
+import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
 
 import java.util.ArrayList;
 
 /**
-    System
+    Systema
+
+    entities:
+
+    wharf
+    equip
+    cranes
+
+    ships
+
+
+
  */
 
 public class Systema {
-    private double clock;               //system clock
+
+
+    private double clock;                       //relógio do sistema
     private EntitySet entitySet;                //conjunto de entidades do sistema
     private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
     private FutureEventList futureEventList;    //FEL
-    private ArrayList<Double> variables;
+    private ArrayList<Double> variables;        //variáveis do sistema
 
     public double getClock() {
         return clock;
@@ -42,6 +56,15 @@ public class Systema {
 
     public void setEntityQueueSet(EntityQueueSet entityQueueSet) {
         this.entityQueueSet = entityQueueSet;
+    }
+
+
+    public void agendFutureEvent(Event envent) {
+        this.futureEventList.addEvent(envent);
+    }
+
+    public FutureEventList getNextImediateEvent() {
+        return futureEventList;
     }
 
     public FutureEventList getFutureEventList() {

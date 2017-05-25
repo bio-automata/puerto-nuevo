@@ -1,7 +1,8 @@
 package br.edu.ifmg.samuelterra.controller;
 
 /**
- * Created by dicus on 25/05/17.
+
+ This class manipulates the System
  */
 public class SimulatorEngine {
 }

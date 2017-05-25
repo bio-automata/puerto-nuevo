@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 
 public class SystemConstants{
-    //variable name constants
+    //system variable names
     public static final int WHARF_QUANTITY = 0;
     public static final int EQUIP_QUANTITY = 1;
     public static final int CRANE_QUANTITY  = 2;
@@ -30,7 +30,7 @@ public class SystemConstants{
     public static final int SHIP_QUANTITY  = 5;
     public static final int TRAIN_QUANTITY  = 6;
 
-    //entity  name constants
+    //entity  names
     public static final int WHARF = 0;
     public static final int EQUIP = 1;
     public static final int CRANE = 2;

@@ -1,5 +1,7 @@
 package br.edu.ifmg.samuelterra.model.entities;
 
+import java.util.ArrayList;
+
 /**
  * Created by dicus on 07/05/17.
  */
