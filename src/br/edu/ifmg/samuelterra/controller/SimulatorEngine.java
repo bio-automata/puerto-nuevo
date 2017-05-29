@@ -1,12 +1,15 @@
 package br.edu.ifmg.samuelterra.controller;
 
+
+import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
 
  This class manipulates the System
  
- 	the life cicle of this class consists in:
- 		take the immediate event in the FEL
- 		execute this event
+ 	the life cicle of this class consists in
+ 		-> take the immediate event in the FEL and execute this event
+ 		-> the event automaticaly changes the system state in the execution time 
+ 		
  		
  	
  
@@ -14,6 +17,9 @@ package br.edu.ifmg.samuelterra.controller;
 public class SimulatorEngine {
 	private Systema system;
 	
-	public void simulate(){	
+	public void simulate(){
+		while(){
+			this.system.getNextImediatEvent().execute;
+		}
 	}
 }
