@@ -10,15 +10,13 @@ import java.util.Map;
 /**
     Systema
 
-    entities:
+    entidades:
 
     wharf
     equip
     cranes
 
     ships
-
-
 
  */
 
@@ -76,9 +74,13 @@ public class Systema {
         this.futureEventList = futureEventList;
     }
 
-    /* Metodos para manipular as variaveis de entrada */
+    /* Metodos para manipular as variaveis do sistema */
     public void setVariable(Integer variable, Double value){
         this.variables.put(variable, value);
+    }
+    
+    public void incrementVariable(Integer variable, Double value){
+        this.variables.put(variable, this.variables.get(variable)+value);
     }
 
     public Double getVariable(Integer variable){
@@ -88,5 +90,4 @@ public class Systema {
 
         return null;
     }
-
 }
