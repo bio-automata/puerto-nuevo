@@ -4,6 +4,8 @@ import br.edu.ifmg.samuelterra.model.entities.Entity;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityList;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  EntityQueueSet is an abstraction model for a set
@@ -13,29 +15,38 @@ import java.util.ArrayList;
  */
 
 public class EntityQueueSet {
-    private ArrayList<EntityList> entityQueue;
 
+    // hash table que representa o conjunto de filas
+    private Map<Integer, EntityList> entityQueue;
+
+    // contrutor
     public EntityQueueSet(){
-        this.entityQueue = new ArrayList<>();
+        this.entityQueue = new HashMap<>();
     }
 
-    public void addEntity(int queue, Entity entity){
-        this.entityQueue.get(queue).addEntity(entity);
+    // adiciona a entidade em determinada fila, se a entidade nao existir, cria uma nova
+    public void addEntity(Integer queue, Entity entity){
+
+        // verifica se existe a fila
+        if (this.entityQueue.containsKey(queue)){
+            this.entityQueue.get(queue).addEntity(entity);
+        }else{
+            // adciona uma fila nova e ja adiciona a entity
+            this.entityQueue.put(queue, new EntityList(EntityList.QUEUE));
+            this.entityQueue.get(queue).addEntity(entity);
+        }
     }
 
+    // retorna uma entidade da frente da fila de determinada tipo de entidade (ex. navio, equipe)
     public Entity getEntity(int queue){
-        return this.entityQueue.get(queue).getEntity();
+        if (this.entityQueue.containsKey(queue)){
+            return this.entityQueue.get(queue).getEntity();
+        }
+        return null;
     }
 
-    public void addEntityQueue(){
-        this.entityQueue.add(new EntityList(EntityList.QUEUE));
-    }
-
-    public void addEntityQueue(int i){
-        this.entityQueue.add(i,new EntityList(EntityList.QUEUE));
-    }
-
-    public EntityList getEntityQueue(int i){
-        return this.entityQueue.get(i);
+    // retorna uma lista de entidades
+    public EntityList getEntityQueue(int queue){
+        return this.entityQueue.get(queue);
     }
 }

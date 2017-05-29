@@ -4,7 +4,8 @@ import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
     Systema
@@ -23,12 +24,13 @@ import java.util.ArrayList;
 
 public class Systema {
 
+    // Tablea hash com as variaveis de entrada do sistema
+    private Map<Integer,Double> variables = new HashMap<>();
 
     private double clock;                       //relógio do sistema
     private EntitySet entitySet;                //conjunto de entidades do sistema
     private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
     private FutureEventList futureEventList;    //FEL
-    private ArrayList<Double> variables;        //variáveis do sistema
 
     public double getClock() {
         return clock;
@@ -58,7 +60,6 @@ public class Systema {
         this.entityQueueSet = entityQueueSet;
     }
 
-
     public void agendFutureEvent(Event envent) {
         this.futureEventList.addEvent(envent);
     }
@@ -75,24 +76,17 @@ public class Systema {
         this.futureEventList = futureEventList;
     }
 
-
-    public void addVariable(double value) {
-        this.variables.add(value);
+    /* Metodos para manipular as variaveis de entrada */
+    public void setVariable(Integer variable, Double value){
+        this.variables.put(variable, value);
     }
 
-    public Double getVariable(int i) {
-        return variables.get(i);
+    public Double getVariable(Integer variable){
+        if (this.variables.containsKey(variable)){
+            return this.variables.get(variable);
+        }
+
+        return null;
     }
 
-    public ArrayList getVariables() {
-        return variables;
-    }
-
-    public void setVariable(int i, Double value) {
-        this.variables.set(i,value);
-    }
-
-    public void setVariables(ArrayList variables) {
-        this.variables = variables;
-    }
 }

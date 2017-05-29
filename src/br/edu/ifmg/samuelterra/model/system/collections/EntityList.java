@@ -41,7 +41,7 @@ public class EntityList {
         }
     }
 
-    public Entity getEntity(){
+    public Entity getEntity(){ /// rever o nome do metodo
         if(this.policy==this.STACK){
             return this.unstack();
         }

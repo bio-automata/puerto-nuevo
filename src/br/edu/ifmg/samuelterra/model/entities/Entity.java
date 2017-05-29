@@ -1,18 +1,30 @@
 package br.edu.ifmg.samuelterra.model.entities;
 
-import java.util.ArrayList;
-
 /**
  * Created by dicus on 07/05/17.
  */
 public class Entity {
-    private String status;
+    // true  = estidade livre
+    // false = estidade ocupada
+    private Boolean status;
 
-    public String getStatus() {
+    private Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    private void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Boolean isFree(){
+        return getStatus();
+    }
+
+    public void lock(){
+        this.status = false;
+    }
+
+    public void unlock(){
+        this.status = true;
     }
 }
