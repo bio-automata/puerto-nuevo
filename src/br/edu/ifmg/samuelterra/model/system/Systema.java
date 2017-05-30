@@ -62,8 +62,8 @@ public class Systema {
         this.futureEventList.addEvent(envent);
     }
 
-    public FutureEventList getNextImediateEvent() {
-        return futureEventList;
+    public Event getNextImediateEvent() {
+        return futureEventList.getEvent();
     }
 
     public FutureEventList getFutureEventList() {
