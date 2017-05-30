@@ -29,6 +29,7 @@ public class Systema {
     private EntitySet entitySet;                //conjunto de entidades do sistema
     private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
     private FutureEventList futureEventList;    //FEL
+    private boolean simulating                  //
 
     public double getClock() {
         return clock;
@@ -58,6 +59,8 @@ public class Systema {
         this.entityQueueSet = entityQueueSet;
     }
 
+
+    //lista de eventos futuros
     public void agendFutureEvent(Event envent) {
         this.futureEventList.addEvent(envent);
     }
@@ -89,5 +92,17 @@ public class Systema {
         }
 
         return null;
+    }
+
+
+
+    //-------------------------------------------//
+
+    public void startSimulation(){
+        this.simulating = true;
+    }
+
+    public boolean simulating(){
+        return this.simulating;
     }
 }
