@@ -6,12 +6,12 @@ package br.edu.ifmg.samuelterra.model.entities.ships;
 public class PostPanamax extends Ship {
 
     public PostPanamax() {
-        setNome("Post Panamax");
-        setDescricao("");
-        setCapacidadeMinima(5.101);
-        setCapacidadeMaxima(10000.0);
-        setComprimento(366.0);
+        setName("Post Panamax");
+        setDescription("");
+        setMinimumCapacity(5.101);
+        setMaximumCapacity(10000.0);
+        setLength(366.0);
         setLargura(49.0);
-        setCalado(15.2);
+        setDraftShip(15.2);
     }
 }

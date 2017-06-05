@@ -4,9 +4,7 @@ import br.edu.ifmg.samuelterra.controller.ReadFile;
 import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
 import br.edu.ifmg.samuelterra.model.entities.vehicles.Cart;
 import br.edu.ifmg.samuelterra.model.entities.Crane;
-import br.edu.ifmg.samuelterra.model.system.System;
 
-import java.nio.file.Paths;
 import java.util.Queue;
 import java.util.Set;
 
@@ -15,10 +13,10 @@ public class Main {
     public static void main(String[] args) {
 
         /*Ship containerShip = new ContainerShipFactory().cria(2);
-        System.out.println(containerShip.getNome());
+        System.out.println(containerShip.getName());
 
         Ship containerShip2 = new ContainerShipFactory().cria(6);
-        System.out.println(containerShip2.getNome());*/
+        System.out.println(containerShip2.getName());*/
 
         Queue<Ship> naviosChegada;
         Queue<Ship> naviosAguardandoDescarregar;

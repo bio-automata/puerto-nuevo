@@ -1,5 +1,7 @@
 package br.edu.ifmg.samuelterra.controller;
 
+import br.edu.ifmg.samuelterra.model.system.Systema;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,8 +11,10 @@ import java.io.IOException;
  */
 public class ReadFile {
 
-    public ReadFile() {
+    Systema system;
 
+    public ReadFile() {
+        system = new Systema();
     }
 
     public void readFile(String path) {
@@ -32,6 +36,13 @@ public class ReadFile {
                     entidade = String.valueOf(linha.charAt(0));
 
                     switch (entidade){
+                        case "U":{
+                            //System.out.println("");
+                            // U TSM 2592000
+                            String resultSplit [] = linha.split(" ");
+                            System.out.println(resultSplit[1]);
+                            break;
+                        }
                         case "G":{
                             //System.out.println("");
                             break;

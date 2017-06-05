@@ -6,12 +6,12 @@ package br.edu.ifmg.samuelterra.model.entities.ships;
 public class SmallFeeder extends Ship {
 
     public SmallFeeder() {
-        setNome("Small Feedder");
-        setDescricao("");
-        setCapacidadeMinima(0.0);
-        setCapacidadeMaxima(1000.0);
-        setComprimento(null);
+        setName("Small Feedder");
+        setDescription("");
+        setMinimumCapacity(0.0);
+        setMaximumCapacity(1000.0);
+        setLength(null);
         setLargura(null);
-        setCalado(null);
+        setDraftShip(null);
     }
 }

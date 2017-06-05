@@ -7,52 +7,52 @@ import br.edu.ifmg.samuelterra.model.entities.Entity;
  */
 public abstract class Ship extends Entity {
 
-    private String nome;
-    private String descricao;
-    private Double capacidadeMinima;
-    private Double capacidadeMaxima;
-    private Double comprimento;
+    private String name;
+    private String description;
+    private Double minimumCapacity;
+    private Double maximumCapacity;
+    private Double length;
     private Double largura;
-    private Double calado;
+    private Double draftShip;
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public Double getCapacidadeMinima() {
-        return capacidadeMinima;
+    public Double getMinimumCapacity() {
+        return minimumCapacity;
     }
 
-    public void setCapacidadeMinima(Double capacidadeMinima) {
-        this.capacidadeMinima = capacidadeMinima;
+    public void setMinimumCapacity(Double minimumCapacity) {
+        this.minimumCapacity = minimumCapacity;
     }
 
-    public Double getCapacidadeMaxima() {
-        return capacidadeMaxima;
+    public Double getMaximumCapacity() {
+        return maximumCapacity;
     }
 
-    public void setCapacidadeMaxima(Double capacidadeMaxima) {
-        this.capacidadeMaxima = capacidadeMaxima;
+    public void setMaximumCapacity(Double maximumCapacity) {
+        this.maximumCapacity = maximumCapacity;
     }
 
-    public Double getComprimento() {
-        return comprimento;
+    public Double getLength() {
+        return length;
     }
 
-    public void setComprimento(Double comprimento) {
-        this.comprimento = comprimento;
+    public void setLength(Double length) {
+        this.length = length;
     }
 
     public Double getLargura() {
@@ -63,11 +63,11 @@ public abstract class Ship extends Entity {
         this.largura = largura;
     }
 
-    public Double getCalado() {
-        return calado;
+    public Double getDraftShip() {
+        return draftShip;
     }
 
-    public void setCalado(Double calado) {
-        this.calado = calado;
+    public void setDraftShip(Double draftShip) {
+        this.draftShip = draftShip;
     }
 }

@@ -6,12 +6,12 @@ package br.edu.ifmg.samuelterra.model.entities.ships;
 public class FeederMax extends Ship {
 
     public FeederMax() {
-        setNome("Feedder Max");
-        setDescricao("");
-        setCapacidadeMinima(2001.0);
-        setCapacidadeMaxima(3000.0);
-        setComprimento(null);
+        setName("Feedder Max");
+        setDescription("");
+        setMinimumCapacity(2001.0);
+        setMaximumCapacity(3000.0);
+        setLength(null);
         setLargura(null);
-        setCalado(null);
+        setDraftShip(null);
     }
 }

@@ -21,21 +21,26 @@ import java.util.ArrayList;
  */
 
 public class SystemConstants{
+
     //system variable names
-    public static final int WHARF_QUANTITY  = 0;
-    public static final int EQUIP_QUANTITY  = 1;
-    public static final int CRANE_QUANTITY  = 2;
-    public static final int CART_QUANTITY   = 3;
-    public static final int RTG_QUANTITY    = 4;
-    public static final int SHIP_QUANTITY   = 5;
-    public static final int TRAIN_QUANTITY  = 6;
+    public static final int WHARF_QUANTITY  = 0;    // quantidade cais
+    public static final int EQUIP_QUANTITY  = 1;    // quantidade equipe
+    public static final int CRANE_QUANTITY  = 2;    // quantidade grua
+    public static final int CART_QUANTITY   = 3;    // quantidade carreta
+    public static final int RTG_QUANTITY    = 4;    // quantidade rtg
+    public static final int SHIP_QUANTITY   = 5;    // quantidade navio
+    public static final int TRAIN_QUANTITY  = 6;    // quantidade trem
 
     //entity  names
-    public static final int WHARF   = 7;
-    public static final int EQUIP   = 8;
-    public static final int CRANE   = 9;
-    public static final int CART    = 10;
-    public static final int RTG     = 11;
-    public static final int SHIP    = 12;
-    public static final int TRAIN   = 13;
+    public static final int WHARF   = 7;    // entidade cais
+    public static final int EQUIP   = 8;    // entidade equipe
+    public static final int CRANE   = 9;    // entidade grua
+    public static final int CART    = 10;   // entidade carrera
+    public static final int RTG     = 11;   // entidade rtg
+    public static final int SHIP    = 12;   // entidade navio
+    public static final int TRAIN   = 13;   // entidade trem
+
+    public static final int SIMULATION_TIME  = 6;    // quantidade trem
+
+
 }

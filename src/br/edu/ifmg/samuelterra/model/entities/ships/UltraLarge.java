@@ -6,12 +6,12 @@ package br.edu.ifmg.samuelterra.model.entities.ships;
 public class UltraLarge extends Ship {
 
     public UltraLarge() {
-        setNome("Ultra Large");
-        setDescricao("");
-        setCapacidadeMinima(14501.0);
-        setCapacidadeMaxima(18270.0);
-        setComprimento(400.0);
+        setName("Ultra Large");
+        setDescription("");
+        setMinimumCapacity(14501.0);
+        setMaximumCapacity(18270.0);
+        setLength(400.0);
         setLargura(59.0);
-        setCalado(15.2);
+        setDraftShip(15.2);
     }
 }

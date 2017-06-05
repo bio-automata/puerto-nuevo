@@ -6,12 +6,12 @@ package br.edu.ifmg.samuelterra.model.entities.ships;
 public class Panamax extends Ship {
 
     public Panamax() {
-        setNome("Panamax");
-        setDescricao("");
-        setCapacidadeMinima(3001.0);
-        setCapacidadeMaxima(5000.0);
-        setComprimento(294.13);
+        setName("Panamax");
+        setDescription("");
+        setMinimumCapacity(3001.0);
+        setMaximumCapacity(5000.0);
+        setLength(294.13);
         setLargura(32.31);
-        setCalado(12.04);
+        setDraftShip(12.04);
     }
 }
