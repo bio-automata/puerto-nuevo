@@ -17,6 +17,11 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 public class SimulatorEngine {
 	private Systema system;
 	
+
+	public void importConfigurationFile(){
+
+	}
+
 	public void simulate(){
 		//inicia a simulação, seta o estado do sistema como "simulando" = true
 		system.startSimulation();
@@ -29,5 +34,10 @@ public class SimulatorEngine {
 
 
 
+	}
+
+
+	public void showResults(){
+		
 	}
 }

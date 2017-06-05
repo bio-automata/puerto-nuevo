@@ -4,7 +4,15 @@ import br.edu.ifmg.samuelterra.model.events.Event;
 import java.util.ArrayList;
 
 /**
- * Created by dicus on 07/05/17.
+  FutureEventList
+
+  This class is an abstraction of a ordered 
+  event sequence. 
+
+  Each event is inserted in chronologic order, 
+  thus the immediate event is positioned in
+  first cell of the list 
+
  */
 public class FutureEventList {
     private ArrayList<Event> futureEventList;

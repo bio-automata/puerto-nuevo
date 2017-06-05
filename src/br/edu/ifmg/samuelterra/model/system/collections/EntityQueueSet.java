@@ -12,6 +12,8 @@ import java.util.Map;
  of all system's queues
 
  Each queue is an especial form of an EntityList
+ itens are acessed in a FIFO policy
+
  */
 
 public class EntityQueueSet {
