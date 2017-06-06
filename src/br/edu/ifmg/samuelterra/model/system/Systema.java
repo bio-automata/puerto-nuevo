@@ -29,7 +29,7 @@ public class Systema {
     private EntitySet entitySet;                //conjunto de entidades do sistema
     private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
     private FutureEventList futureEventList;    //FEL
-    private boolean simulating                  //
+    private boolean simulating;                 //flag de status do sistema
 
     public double getClock() {
         return clock;

@@ -30,6 +30,7 @@ public class Main {
         Set<Crane> setCarretas;
 
         ReadFile readFile = new ReadFile();
+        // muda conforme o caminho do arquivo
         readFile.readFile("/home/samuel/IdeaProjects/Puerto Nuevo/src/br/edu/ifmg/samuelterra/cenario.txt");
 
 
