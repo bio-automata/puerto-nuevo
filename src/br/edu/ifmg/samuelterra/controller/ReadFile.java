@@ -17,7 +17,7 @@ public class ReadFile {
         system = new Systema();
     }
 
-    public void readFile(String path) {
+    public Systema read(String path) {
         System.out.printf("\nConteúdo do arquivo texto:\n");
         try {
             FileReader arq = new FileReader(path);
@@ -283,6 +283,7 @@ public class ReadFile {
         } catch (IOException e) {
             System.err.printf("Erro na abertura do arquivo: %s.\n", e.getMessage());
         }
+        return null;
     }
 
 }

@@ -40,7 +40,7 @@ public class SystemConstants{
     public static final int SHIP    = 12;   // entidade navio
     public static final int TRAIN   = 13;   // entidade trem
 
-    public static final int SIMULATION_TIME  = 6;    // quantidade trem
+    public static final int SIMULATION_TIME  = 6;    //
 
 
 }
