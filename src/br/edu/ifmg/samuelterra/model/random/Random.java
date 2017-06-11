@@ -13,6 +13,7 @@ public class Random {
         this.currentValue = seed;
     }
 
+    //distribuição uniforme e suas variações
     public long uniform(){
         this.currentValue = ((long)A*this.currentValue+C)%M;
         return (long)this.currentValue;
@@ -31,5 +32,42 @@ public class Random {
     public double percentual(){
         //this.currentValue = (C*this.currentValue+A)%M;
         return (double)this.uniform()/M;
+    }
+
+    //funções derivadas da função percentual
+    public double normal(double mean, double variancy){
+        int i, n;
+        double sum;
+
+        n = 128;
+        sum = 0;
+        for(i=0;i<n;i++){
+            sum = sum+this.percentual();
+        }
+
+        return mean+variancy*( ( (sum-(n/2)) / ((Math.sqrt(n/12.0)) ) ) );
+    }
+
+    public double exponential(double lambda){
+        return -(1.0/this.lambda)*Math.log(1.0-this.percentual());
+    }
+
+    public double triangular(double a, double b, double c){
+        double x;
+
+        x = this.percentual();
+        if(x>=a && x<c){
+            return (2*(x-a))/((b-a)*(c-a));
+        }
+        if(x>c && x<=b){
+            return (2*(b-x))/((b-a)*(b-c));
+        }
+        else{
+            return 2/(b-a);
+        }
+    }
+
+    public double poison(){
+
     }
 }
