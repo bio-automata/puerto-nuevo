@@ -6,7 +6,7 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
 
  */
-public class PlacingOnCartContainerEvent extends Event {
+public class PlacingOnCartContainerEvent extends Event{
     @Override
     public void execute(Systema system){
     	//atualisa o relógio do sistema

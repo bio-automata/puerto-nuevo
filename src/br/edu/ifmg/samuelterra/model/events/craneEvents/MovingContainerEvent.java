@@ -6,7 +6,7 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
 
  */
-public class MovingContainerEvent/*RiseContainerEvent*/ extends Event {
+public class MovingContainerEvent extends Event{
     @Override
     public void execute(Systema system){
         system.incrementClock(this.getDurationTime());

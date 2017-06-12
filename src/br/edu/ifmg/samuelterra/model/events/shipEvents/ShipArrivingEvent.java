@@ -1,5 +1,6 @@
 package br.edu.ifmg.samuelterra.model.events.shipEvents;
 
+import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 /**
@@ -38,7 +39,7 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
  */
 
-abstract public class ShipArrivingEvent {
+abstract public class ShipArrivingEvent extends Event {
     private double occurrenceTime;
     private double durationTime;
 

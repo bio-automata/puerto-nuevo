@@ -6,7 +6,7 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
 
  */
-public class RiseContainerEvent extends Event {
+public class RiseContainerEvent extends Event{
     @Override
     public void execute(Systema system){
     	//atualisa o relógio do sistema
