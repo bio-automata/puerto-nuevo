@@ -1,33 +1,22 @@
 package br.edu.ifmg.samuelterra.model.events.railwaycompositionEvents;
 
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 /**
-
  TrainArrivingEvent
 
  */
 
-abstract public class TrainArrivingEvent extends Event{
-    private double occurrenceTime;
-    private double durationTime;
+public class TrainArrivingEvent extends Event{
+    public TrainArrivingEvent(double lambda){
+        this.distribution = RandomConstants.EXPOENENTIAL;
 
-    abstract public void execute(Systema system);     //dentro deste método acontecerá a mágica
-
-    public double getOccurrenceTime(){
-        return this.occurrenceTime;
+        this.distributionParams.put("lambda",lambda);
     }
 
-    public void setOccurrenceTime(double occurrenceTime){
-        this.occurrenceTime= occurrenceTime;
-    }
-
-    public double getDurationTime(){
-        return this.durationTime;
-    }
-
-    public void setTimeDistribuition(double duration){
-        this.durationTime = duration;
+    public void execute(Systema system){
+        system.setClock(this.getDurationTime());
     }
 }

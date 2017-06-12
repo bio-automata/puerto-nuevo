@@ -1,8 +1,10 @@
 package br.edu.ifmg.samuelterra.model.events;
 
+import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
 
@@ -40,11 +42,20 @@ import java.util.ArrayList;
 
  */
 
-abstract public class Event {
+public class Event {
+    protected int distribution;
+    protected HashMap<String, Double> distributionParams;
     private double occurrenceTime;
     private double durationTime;
 
-    abstract public void execute(Systema system);     //dentro deste método acontecerá a mágica
+    public Event(){
+        this.distribution = -1;
+        this.distributionParams = new HashMap<String, Double>;
+        this.occurrenceTime = -1;
+        this.durationTime = -1;
+    }
+
+    public void execute(Systema system){}     //dentro deste método acontecerá a mágica
 
     public double getOccurrenceTime(){
         return this.occurrenceTime;

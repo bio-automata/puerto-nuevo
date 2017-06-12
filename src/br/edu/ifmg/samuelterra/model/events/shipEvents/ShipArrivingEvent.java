@@ -1,6 +1,7 @@
 package br.edu.ifmg.samuelterra.model.events.shipEvents;
 
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 /**
@@ -41,7 +42,11 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
 abstract public class ShipArrivingEvent extends Event {
     //exponencial
+    public ShipArrivingEvent(double lambda){
+        this.distribution = RandomConstants.EXPOENENTIAL;
 
+        this.distributionParams.put("lambda",lambda);
+    }
 
     public void execute(Systema system){
 
