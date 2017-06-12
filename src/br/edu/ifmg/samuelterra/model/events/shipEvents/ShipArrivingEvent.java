@@ -40,24 +40,10 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
  */
 
 abstract public class ShipArrivingEvent extends Event {
-    private double occurrenceTime;
-    private double durationTime;
+    //exponencial
 
-    abstract public void execute(Systema system);     //dentro deste método acontecerá a mágica
 
-    public double getOccurrenceTime(){
-        return this.occurrenceTime;
-    }
+    public void execute(Systema system){
 
-    public void setOccurrenceTime(double occurrenceTime){
-        this.occurrenceTime= occurrenceTime;
-    }
-
-    public double getDurationTime(){
-        return this.durationTime;
-    }
-
-    public void setTimeDistribuition(double duration){
-        this.durationTime = duration;
     }
 }

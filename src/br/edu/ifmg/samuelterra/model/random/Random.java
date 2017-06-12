@@ -1,5 +1,8 @@
 package br.edu.ifmg.samuelterra.model.random;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by dicus on 28/04/17.
  */
@@ -24,9 +27,9 @@ public class Random {
         return this.uniform()%n;
     }
 
-    public long uniform(long i, long n){
+    public long uniform(long m, long n){
         //this.currentValue = (long)(A*this.currentValue+C)%M;
-        return i+this.uniform()%(n-i);
+        return m+this.uniform()%(n-m);
     }
 
     public double percentual(){
@@ -35,7 +38,7 @@ public class Random {
     }
 
     //funções derivadas da função percentual
-    public double normal(double mean, double variancy){
+    public double normal(double mean, double variance){
         int i, n;
         double sum;
 
@@ -45,11 +48,11 @@ public class Random {
             sum = sum+this.percentual();
         }
 
-        return mean+variancy*( ( (sum-(n/2)) / ((Math.sqrt(n/12.0)) ) ) );
+        return mean+variance*( ( (sum-(n/2)) / ((Math.sqrt(n/12.0)) ) ) );
     }
 
     public double exponential(double lambda){
-        return -(1.0/this.lambda)*Math.log(1.0-this.percentual());
+        return -(1.0/lambda)*Math.log(1.0-this.percentual());
     }
 
     public double triangular(double a, double b, double c){
@@ -67,7 +70,42 @@ public class Random {
         }
     }
 
-    public double poison(){
+    public double poison(){     //ainda não implementada
+        return 0;
+    }
 
+    //sorteia qualquer tipo de distribuição
+    public double raffle(int distribution, HashMap<String,Double> params){
+        switch(distribution){
+            case RandomConstants.UNIFORM:
+                switch(params.size()){
+                    case 0:
+                        return this.uniform();
+
+                    case 1:
+                        return this.uniform(params.get("n").intValue());
+
+                    case 2:
+                        return this.uniform(params.get("m").intValue(),params.get("n").intValue());
+                }
+
+            case RandomConstants.PERCENTUAL:
+                return this.percentual();
+
+            case RandomConstants.NORMAL:
+                return this.normal(params.get("mean"),params.get("variance"));
+
+            case RandomConstants.EXPOENENTIAL:
+                return this.exponential(params.get("lambda"));
+
+            case RandomConstants.TRIANGULAR:
+                return this.triangular(params.get("a"),params.get("b"),params.get("c"));
+
+            case RandomConstants.POISON:
+
+                break;
+        }
+
+        return 0;
     }
 }
