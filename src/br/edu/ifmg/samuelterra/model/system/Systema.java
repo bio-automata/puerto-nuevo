@@ -1,5 +1,6 @@
 package br.edu.ifmg.samuelterra.model.system;
 
+import br.edu.ifmg.samuelterra.TimeFactory;
 import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
@@ -25,11 +26,12 @@ public class Systema {
     // Tablea hash com as variaveis de entrada do sistema
     private Map<Integer,Double> variables = new HashMap<>();
 
-    private double clock;                       //relógio do sistema
-    private EntitySet entitySet;                //conjunto de entidades do sistema
-    private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
-    private FutureEventList futureEventList;    //FEL
-    private boolean simulating;                 //flag de status do sistema
+    private double clock;                       // relógio do sistema
+    private EntitySet entitySet;                // conjunto de entidades do sistema
+    private EntityQueueSet entityQueueSet;      // conjunto de filas do sistema
+    private FutureEventList futureEventList;    // FEL
+    private boolean simulating;                 // flag de status do sistema
+    private TimeFactory timeFactory;            // factory que retorna o valor das distribuições
 
     public double getClock() {
         return clock;
@@ -94,7 +96,13 @@ public class Systema {
         return null;
     }
 
+    public TimeFactory getTimeFactory() {
+        return timeFactory;
+    }
 
+    public void setTimeFactory(TimeFactory timeFactory) {
+        this.timeFactory = timeFactory;
+    }
 
     //-------------------------------------------//
 
