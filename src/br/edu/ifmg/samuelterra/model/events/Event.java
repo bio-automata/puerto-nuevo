@@ -50,7 +50,7 @@ public class Event {
 
     public Event(){
         this.distribution = -1;
-        this.distributionParams = new HashMap<String, Double>;
+        this.distributionParams = new HashMap<String, Double>();
         this.occurrenceTime = -1;
         this.durationTime = -1;
     }

@@ -26,7 +26,7 @@ public class EntityQueueSet {
         this.entityQueue = new HashMap<>();
     }
 
-    // adiciona a entidade em determinada fila, se a entidade nao existir, cria uma nova
+    // adiciona a entidade em determinada fila, se a entidade nao existir, create uma nova
     public void addEntity(Integer queue, Entity entity){
 
         // verifica se existe a fila

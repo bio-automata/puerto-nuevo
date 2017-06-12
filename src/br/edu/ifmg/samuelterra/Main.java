@@ -13,10 +13,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /*Ship containerShip = new ContainerShipFactory().cria(2);
+        /*Ship containerShip = new ContainerShipFactory().create(2);
         System.out.println(containerShip.getName());
 
-        Ship containerShip2 = new ContainerShipFactory().cria(6);
+        Ship containerShip2 = new ContainerShipFactory().create(6);
         System.out.println(containerShip2.getName());*/
 
         Queue<Ship> naviosChegada;
