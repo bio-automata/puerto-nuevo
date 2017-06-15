@@ -1,4 +1,4 @@
-package br.edu.ifmg.samuelterra.model.random;
+package br.edu.ifmg.samuelterra.model.random.time;
 
 
 import br.edu.ifmg.samuelterra.model.system.Systema;

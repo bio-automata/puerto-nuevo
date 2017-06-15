@@ -5,6 +5,7 @@ import br.edu.ifmg.samuelterra.model.entities.Equip;
 import br.edu.ifmg.samuelterra.model.entities.Quay;
 import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.events.railwaycompositionEvents.EndDockingEvent;
 import br.edu.ifmg.samuelterra.model.random.Random;
 import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
@@ -47,7 +48,7 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
 abstract public class ShipArrivingEvent extends Event {
     //exponencial
-    public ShipArrivingEvent(double lambda){
+    public ShipArrivingEvent(){
 
     }
 
@@ -66,16 +67,23 @@ abstract public class ShipArrivingEvent extends Event {
             Equip equip = (Equip) system.getEntityQueueSet().getEntity("equip");
             Quay quay = (Quay) system.getEntityQueueSet().getEntity("quay");
 
-    		//sorteia duração do atracamento
+            /* agendando na FEL um evento de fim de atracamento
 
-    		//agenda na fel evento de fim de atracamento
+               cria o novo evento
+               setando seus paramêtros
+               e estabelece o tempo de ocorrencia
+               com base no tempo atual
+               + o sorteio da duração do atracamento
+            */
 
 
-            //system.getFutureEventList().addEvent(Event);
+            Event event = new EndDockingEvent();
+            event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("docking"));
+            system.getFutureEventList().addEvent(event);
     	}
     	else{
-    		//entra em fila de espera
-            system.getEntityQueueSet().addEntity("ship waiting docking", ship);
+    		//entra em fila de navios em espera para atracar
+            system.getEntityQueueSet().addEntity("ship waiting dock", ship);
     	}
 
     }

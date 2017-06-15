@@ -1,13 +1,9 @@
-package br.edu.ifmg.samuelterra.model.events.railwaycompositionEvents;
+package br.edu.ifmg.samuelterra.model.events.equipEvents;
 
-import br.edu.ifmg.samuelterra.ContainerShipFactory;
 import br.edu.ifmg.samuelterra.model.entities.Equip;
 import br.edu.ifmg.samuelterra.model.entities.Quay;
 import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
 import br.edu.ifmg.samuelterra.model.events.Event;
-import br.edu.ifmg.samuelterra.model.events.equipEvents.EndUndockingEvent;
-import br.edu.ifmg.samuelterra.model.random.Random;
-import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 /**
@@ -15,28 +11,22 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
  */
 
-public class EndDockingEvent extends Event{
-    public EndDockingEvent(){
+public class EndUndockingEvent extends Event{
+    public EndUndockingEvent(){
 
     }
 
     public void execute(Equip equip, Systema system){
-        //atualiza o tempo do sistema
+        /** ainda preceisa ser implementado
+            o que está aqui foi coopiadao de outra calsse
+         */
+
+        //verifica cais e equipe disponíveis
         system.setClock(this.getOccurrenceTime());
 
 
-        //se navio para desatracar
-        if (system.getEntityQueueSet().getEntityQueue("ship waiting undock").available()){
-            //retira navio
-            Ship ship  = (Ship) system.getEntityQueueSet().getEntity("ship waiting undock");
-
-            Event event = new EndUndockingEvent();
-            event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("undocking"));
-            system.getFutureEventList().addEvent(event);
-        }
-
-        //se navio para atracar e cais disponível
-        else if(system.getEntityQueueSet().getEntityQueue("ship waiting dock").available()&&system.getEntityQueueSet().getEntityQueue("quay").available()){
+        //navio para atracar e cais dsiponível
+        if(system.getEntityQueueSet().getEntityQueue("ship waiting dock").available()&&system.getEntityQueueSet().getEntityQueue("quay").available()){
             //retira navio e reserva cais
             Ship ship  = (Ship) system.getEntityQueueSet().getEntity("ship waiting dock");
             Quay quay = (Quay) system.getEntityQueueSet().getEntity("quay");
@@ -51,9 +41,18 @@ public class EndDockingEvent extends Event{
             */
 
 
-            Event event = new EndDockingEvent();
+            Event event = new EndUndockingEvent();
             event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("docking"));
             system.getFutureEventList().addEvent(event);
+        }
+        else if (system.getEntityQueueSet().getEntityQueue("ship waiting undock").available()){
+            //retira navio
+            Ship ship  = (Ship) system.getEntityQueueSet().getEntity("ship waiting undock");
+
+            Event event = new EndUndockingEvent();
+            event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("docking"));
+            system.getFutureEventList().addEvent(event);
+
         }
         else{
             //entra em fila de espera

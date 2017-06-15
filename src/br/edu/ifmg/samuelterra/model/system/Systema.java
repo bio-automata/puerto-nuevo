@@ -2,6 +2,7 @@ package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.random.Random;
+import br.edu.ifmg.samuelterra.model.random.time.RandomTimeGenerator;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
 
@@ -32,11 +33,13 @@ public class Systema {
     private FutureEventList futureEventList;    //FEL
     private boolean simulating;                 //flag de status do sistema
     public Random random;
+    public RandomTimeGenerator randomTimeGenerator;
 
     public Systema(){
         this.clock = 0;
         this.variables = new HashMap<>();
         this.random = new Random();
+        this.randomTimeGenerator = new RandomTimeGenerator();
     }
 
     public double getClock() {
@@ -103,6 +106,9 @@ public class Systema {
     }
 
 
+    public RandomTimeGenerator getRandomTimeGenerator(){
+        return this.randomTimeGenerator;
+    }
 
     //-------------------------------------------//
 

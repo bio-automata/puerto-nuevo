@@ -7,13 +7,9 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
 
  */
-public class MovingContainerToCartEvent extends Event{
-    public MovingContainerToCartEvent(double a, double b, double c){
-        this.distribution = RandomConstants.TRIANGULAR;
+public class EndLoadingCartEvent extends Event{
+    public EndLoadingCartEvent(){
 
-        this.distributionParams.put("a",a);
-        this.distributionParams.put("b",b);
-        this.distributionParams.put("c",c);
     }
 
     @Override

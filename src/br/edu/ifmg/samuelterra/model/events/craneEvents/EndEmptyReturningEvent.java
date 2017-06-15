@@ -4,11 +4,14 @@ import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
+import java.util.HashMap;
+
 /**
 
  */
-public class RiseContainerEvent extends Event{
-    public RiseContainerEvent(double a, double b, double c){
+public class EndEmptyReturningEvent extends Event{
+
+    public EndEmptyReturningEvent(double a, double b, double c){
         this.distribution = RandomConstants.TRIANGULAR;
 
         this.distributionParams.put("a",a);
@@ -18,14 +21,8 @@ public class RiseContainerEvent extends Event{
 
     @Override
     public void execute(Systema system){
-    	//atualisa o relógio do sistema
-        //system.setClock(this.getOcorrenceTime());
+        system.setClock(this.getDurationTime());
 
-        //altera váriaveis do sistema e das entidades
-        //decrementa contaier do navio
 
-    	//sorteia a duração dos eventos desencadeados
-		//agenda na FEL os eventos desencadeados
-        //system.agendFutureEvent(event);
     }
 }
