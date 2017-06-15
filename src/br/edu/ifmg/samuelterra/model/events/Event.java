@@ -40,22 +40,21 @@ import java.util.HashMap;
  alterar o estado de estidades
  inserir eventos desencadeados na lista de eventos do sistema
 
+
+ todo classer derivado de Event deverá
+ implementar este método:
+
+ public void execute();  //dentro deste método acontecerá a mágica
  */
 
 public class Event {
-    protected int distribution;
-    protected HashMap<String, Double> distributionParams;
     private double occurrenceTime;
     private double durationTime;
 
     public Event(){
-        this.distribution = -1;
-        this.distributionParams = new HashMap<String, Double>();
         this.occurrenceTime = -1;
         this.durationTime = -1;
     }
-
-    public void execute(Systema system){}     //dentro deste método acontecerá a mágica
 
     public double getOccurrenceTime(){
         return this.occurrenceTime;
@@ -67,9 +66,5 @@ public class Event {
 
     public double getDurationTime(){
         return this.durationTime;
-    }
-
-    public void setTimeDistribuition(double duration){
-        this.durationTime = duration;
     }
 }
