@@ -1,5 +1,6 @@
 package br.edu.ifmg.samuelterra.model.system;
 
+import br.edu.ifmg.samuelterra.TimeFactory;
 import br.edu.ifmg.samuelterra.model.events.Event;
 import br.edu.ifmg.samuelterra.model.random.Random;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
@@ -32,6 +33,8 @@ public class Systema {
     private FutureEventList futureEventList;    //FEL
     private boolean simulating;                 //flag de status do sistema
     public Random random;
+
+    private TimeFactory timeFactory;
 
     public Systema(){
         this.clock = 0;
@@ -100,6 +103,14 @@ public class Systema {
         }
 
         return null;
+    }
+
+    public TimeFactory getTimeFactory() {
+        return timeFactory;
+    }
+
+    public void setTimeFactory(TimeFactory timeFactory) {
+        this.timeFactory = timeFactory;
     }
 
 

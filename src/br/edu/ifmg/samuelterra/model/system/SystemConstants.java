@@ -34,13 +34,13 @@ public class SystemConstants{
     public static final int TRAIN_QUANTITY  = 6;    // quantidade trem
 
     //entity  names
-    public static final int WHARF   = 0;    // entidade cais
-    public static final int EQUIP   = 1;    // entidade equipe
-    public static final int CRANE   = 2;    // entidade grua
-    public static final int CART    = 3;   // entidade carrera
-    public static final int RTG     = 4;   // entidade rtg
-    public static final int SHIP    = 5;   // entidade navio
-    public static final int TRAIN   = 6;   // entidade trem
+    public static final int WHARF   = 7;    // entidade cais
+    public static final int EQUIP   = 8;    // entidade equipe
+    public static final int CRANE   = 9;    // entidade grua
+    public static final int CART    = 10;   // entidade carrera
+    public static final int RTG     = 11;   // entidade rtg
+    public static final int SHIP    = 12;   // entidade navio
+    public static final int TRAIN   = 13;   // entidade trem
 
     
 
