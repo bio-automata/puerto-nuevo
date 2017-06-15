@@ -4,6 +4,8 @@ import br.edu.ifmg.samuelterra.model.entities.Entity;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityCollection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  EntitySet is a class to group all system's entities
@@ -11,30 +13,31 @@ import java.util.ArrayList;
  */
 
 public class EntitySet {
-    private ArrayList<EntityCollection> entitySet;
+    private Map<String,EntityCollection> entitySet;
 
     public EntitySet(){
-        this.entitySet = new ArrayList<>();
+        this.entitySet = new HashMap<>();
     }
 
-    public void addCollection (EntityCollection collection){
-        this.entitySet.add(collection);
-    }
-    public void addEntity(int collection, Entity entity){
-        this.getCollection(collection).addEntity(entity);
+    public void addCollection (String key, EntityCollection collection){
+        this.entitySet.put(key,collection);
     }
 
-    public EntityCollection getCollection (int i){
-        return this.entitySet.get(i);
+    public void addEntity(String key, Entity entity){
+        this.getCollection(key).addEntity(entity);
     }
-    public Entity getEntity(int collection, int i){
-        return this.getCollection(collection).getEntity(i);
+
+    public EntityCollection getCollection (String key){
+        return this.entitySet.get(key);
+    }
+    public Entity getEntity(String key, int i){
+        return this.getCollection(key).getEntity(i);
     }
 
     public void destroyCollection(int i){
         this.entitySet.remove(i);
     }
-    public void destroyEntity(int collection, int i){
-        this.getCollection(collection).destroyEntity(i);
+    public void destroyEntity(String key, int i){
+        this.getCollection(key).destroyEntity(i);
     }
 }

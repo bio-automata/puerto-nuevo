@@ -10,8 +10,5 @@ public class FeederMax extends Ship {
         setDescription("");
         setMinimumCapacity(2001.0);
         setMaximumCapacity(3000.0);
-        setLength(null);
-        setLargura(null);
-        setDraftShip(null);
     }
 }

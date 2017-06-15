@@ -10,8 +10,5 @@ public class NewPanamax extends Ship {
         setDescription("");
         setMinimumCapacity(10001.0);
         setMaximumCapacity(14500.0);
-        setLength(366.0);
-        setLargura(49.0);
-        setDraftShip(15.2);
     }
 }

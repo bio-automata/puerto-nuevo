@@ -1,11 +1,13 @@
 package br.edu.ifmg.samuelterra.model.system;
 
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.random.Random;
 import br.edu.ifmg.samuelterra.model.system.collections.EntityQueueSet;
 import br.edu.ifmg.samuelterra.model.system.collections.EntitySet;
 
 import java.util.HashMap;
 import java.util.Map;
+
 
 /**
     Systema
@@ -21,15 +23,21 @@ import java.util.Map;
  */
 
 public class Systema {
-
-    // Tablea hash com as variaveis de entrada do sistema
-    private Map<Integer,Double> variables = new HashMap<>();
+    //hash Table com as variaveis de entrada do sistema
+    private Map<String,Double> variables;
 
     private double clock;                       //relógio do sistema
     private EntitySet entitySet;                //conjunto de entidades do sistema
     private EntityQueueSet entityQueueSet;      //conjunto de filas do sistema
     private FutureEventList futureEventList;    //FEL
     private boolean simulating;                 //flag de status do sistema
+    public Random random;
+
+    public Systema(){
+        this.clock = 0;
+        this.variables = new HashMap<>();
+        this.random = new Random();
+    }
 
     public double getClock() {
         return clock;
@@ -78,11 +86,11 @@ public class Systema {
     }
 
     /* Metodos para manipular as variaveis do sistema */
-    public void setVariable(Integer variable, Double value){
+    public void setVariable(String variable, Double value){
         this.variables.put(variable, value);
     }
     
-    public void incrementVariable(Integer variable, Double value){
+    public void incrementVariable(String variable, Double value){
         this.variables.put(variable, this.variables.get(variable)+value);
     }
 

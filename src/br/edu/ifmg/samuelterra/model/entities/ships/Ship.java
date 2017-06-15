@@ -11,9 +11,7 @@ public abstract class Ship extends Entity {
     private String description;
     private Double minimumCapacity;
     private Double maximumCapacity;
-    private Double length;
-    private Double largura;
-    private Double draftShip;
+    private int numberOfContainers;
 
     public String getName() {
         return name;
@@ -31,6 +29,14 @@ public abstract class Ship extends Entity {
         this.description = description;
     }
 
+    public int getNumeberOfContainers() {
+        return this.numberOfContainers;
+    }
+
+    public void setNumeberOfContainers(int numberOfContainers) {
+        this.numberOfContainers = numberOfContainers;
+    }
+
     public Double getMinimumCapacity() {
         return minimumCapacity;
     }
@@ -45,29 +51,5 @@ public abstract class Ship extends Entity {
 
     public void setMaximumCapacity(Double maximumCapacity) {
         this.maximumCapacity = maximumCapacity;
-    }
-
-    public Double getLength() {
-        return length;
-    }
-
-    public void setLength(Double length) {
-        this.length = length;
-    }
-
-    public Double getLargura() {
-        return largura;
-    }
-
-    public void setLargura(Double largura) {
-        this.largura = largura;
-    }
-
-    public Double getDraftShip() {
-        return draftShip;
-    }
-
-    public void setDraftShip(Double draftShip) {
-        this.draftShip = draftShip;
     }
 }

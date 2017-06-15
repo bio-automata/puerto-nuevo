@@ -9,11 +9,9 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
  */
 
-public class EndAtracament extends Event{
-    public EndAtracament(double lambda){
-        this.distribution = RandomConstants.EXPOENENTIAL;
+public class EndDockingEvent extends Event{
+    public EndDockingEvent(){
 
-        this.distributionParams.put("lambda",lambda);
     }
 
     public void execute(Systema system){

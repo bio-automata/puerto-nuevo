@@ -7,15 +7,15 @@ import br.edu.ifmg.samuelterra.model.entities.ships.*;
  */
 public class ContainerShipFactory {
 
-    private static final int FEEDER       = 0;
-    private static final int FEEDER_MAX   = 1;
-    private static final int NEW_PANAMAX  = 2;
-    private static final int PANAMAX      = 3;
-    private static final int POST_PANAMAX = 4;
-    private static final int SMALL_FEEDER = 5;
-    private static final int ULTRA_LARGE  = 6;
+    public static final int FEEDER       = 0;
+    public static final int FEEDER_MAX   = 1;
+    public static final int NEW_PANAMAX  = 2;
+    public static final int PANAMAX      = 3;
+    public static final int POST_PANAMAX = 4;
+    public static final int SMALL_FEEDER = 5;
+    public static final int ULTRA_LARGE  = 6;
 
-    public Ship create(int tipo){
+    public static Ship create(int tipo){
 
         if (tipo == FEEDER)
             return new Feeder();
@@ -33,7 +33,5 @@ public class ContainerShipFactory {
             return new UltraLarge();
         else
             throw new IllegalArgumentException("Tipo invalido!");
-
     }
-
 }

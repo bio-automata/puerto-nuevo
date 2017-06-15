@@ -10,8 +10,5 @@ public class SmallFeeder extends Ship {
         setDescription("");
         setMinimumCapacity(0.0);
         setMaximumCapacity(1000.0);
-        setLength(null);
-        setLargura(null);
-        setDraftShip(null);
     }
 }

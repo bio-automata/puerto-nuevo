@@ -10,8 +10,5 @@ public class UltraLarge extends Ship {
         setDescription("");
         setMinimumCapacity(14501.0);
         setMaximumCapacity(18270.0);
-        setLength(400.0);
-        setLargura(59.0);
-        setDraftShip(15.2);
     }
 }

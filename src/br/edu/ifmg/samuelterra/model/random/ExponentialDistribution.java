@@ -5,18 +5,18 @@ package br.edu.ifmg.samuelterra.model.random;
  */
 public class ExponentialDistribution {
 
-    Double lamb;
+    Double lambda;
 
-    public ExponentialDistribution(Double lamb) {
-        this.lamb = lamb;
+    public ExponentialDistribution(Double lambda) {
+        this.lambda = lambda;
     }
 
-    public Double getLamb() {
-        return lamb;
+    public Double getLambda() {
+        return lambda;
     }
 
-    public void setLamb(Double lamb) {
-        this.lamb = lamb;
+    public void setLambda(Double lambda) {
+        this.lambda = lambda;
     }
 
 }

@@ -3,6 +3,7 @@ package br.edu.ifmg.samuelterra.model.system.collections;
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
     Entitycolection
@@ -12,8 +13,9 @@ import java.util.ArrayList;
     an iten persists into data estructure after 
     it was accessed by the get method
  */
+
 public class EntityCollection {
-    private ArrayList<Entity> entityCollection;
+    private List<Entity> entityCollection;
 
     public EntityCollection(){
         this.entityCollection = new ArrayList<>();
