@@ -44,11 +44,30 @@ abstract public class ShipArrivingEvent extends Event {
     //exponencial
     public ShipArrivingEvent(double lambda){
         this.distribution = RandomConstants.EXPOENENTIAL;
-
         this.distributionParams.put("lambda",lambda);
     }
 
     public void execute(Systema system){
+    	system.setClock(this.getDurationTime());
+    	//sorteia o tipo do navio
+
+    	//quantidade de containers entre 70 e 100 percent
+
+
+    	//verifica cais e equipe disponíveis
+    	if(){
+    		//reserva cais e equipe
+
+
+    		//sorteia duração do atracamento
+
+    		//agenda na fel evento de fim de atracamento
+
+    	}
+    	else{
+    		//entra em fila de espera
+
+    	}
 
     }
 }
