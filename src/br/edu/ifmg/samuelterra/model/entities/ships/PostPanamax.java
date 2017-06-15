@@ -10,8 +10,5 @@ public class PostPanamax extends Ship {
         setDescription("");
         setMinimumCapacity(5.101);
         setMaximumCapacity(10000.0);
-        setLength(366.0);
-        setLargura(49.0);
-        setDraftShip(15.2);
     }
 }

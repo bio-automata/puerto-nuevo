@@ -1,6 +1,11 @@
 package br.edu.ifmg.samuelterra.model.events.shipEvents;
 
+import br.edu.ifmg.samuelterra.ContainerShipFactory;
+import br.edu.ifmg.samuelterra.model.entities.Equip;
+import br.edu.ifmg.samuelterra.model.entities.Quay;
+import br.edu.ifmg.samuelterra.model.entities.ships.Ship;
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.random.Random;
 import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
@@ -43,12 +48,35 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 abstract public class ShipArrivingEvent extends Event {
     //exponencial
     public ShipArrivingEvent(double lambda){
-        this.distribution = RandomConstants.EXPOENENTIAL;
 
-        this.distributionParams.put("lambda",lambda);
     }
 
     public void execute(Systema system){
+    	system.setClock(this.getOccurrenceTime());
+
+        //sorteia o tipo do navio
+        Ship ship = ContainerShipFactory.create((int)new Random().uniform(7));
+
+        //sorteia a quantidade de containers entre 70 e 100 percent
+        ship.setNumeberOfContainers((int)(ship.getMaximumCapacity()*(70+new Random().uniform(30)/100)));
+
+    	//verifica cais e equipe disponíveis
+    	if(system.getEntityQueueSet().getEntityQueue("quay").available()&&system.getEntityQueueSet().getEntityQueue("equip").available()){
+    		//reserva cais e equipe
+            Equip equip = (Equip) system.getEntityQueueSet().getEntity("equip");
+            Quay quay = (Quay) system.getEntityQueueSet().getEntity("quay");
+
+    		//sorteia duração do atracamento
+
+    		//agenda na fel evento de fim de atracamento
+
+
+            //system.getFutureEventList().addEvent(Event);
+    	}
+    	else{
+    		//entra em fila de espera
+            system.getEntityQueueSet().addEntity("ship waiting docking", ship);
+    	}
 
     }
 }

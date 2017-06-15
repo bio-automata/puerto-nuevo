@@ -10,8 +10,5 @@ public class Panamax extends Ship {
         setDescription("");
         setMinimumCapacity(3001.0);
         setMaximumCapacity(5000.0);
-        setLength(294.13);
-        setLargura(32.31);
-        setDraftShip(12.04);
     }
 }

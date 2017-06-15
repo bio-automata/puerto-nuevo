@@ -19,7 +19,7 @@ import java.util.Map;
 public class EntityQueueSet {
 
     // hash table que representa o conjunto de filas
-    private Map<Integer, EntityList> entityQueue;
+    private Map<String, EntityList> entityQueue;
 
     // contrutor
     public EntityQueueSet(){
@@ -27,7 +27,7 @@ public class EntityQueueSet {
     }
 
     // adiciona a entidade em determinada fila, se a entidade nao existir, create uma nova
-    public void addEntity(Integer queue, Entity entity){
+    public void addEntity(String queue, Entity entity){
 
         // verifica se existe a fila
         if (this.entityQueue.containsKey(queue)){
@@ -40,7 +40,7 @@ public class EntityQueueSet {
     }
 
     // retorna uma entidade da frente da fila de determinada tipo de entidade (ex. navio, equipe)
-    public Entity getEntity(int queue){
+    public Entity getEntity(String queue){
         if (this.entityQueue.containsKey(queue)){
             return this.entityQueue.get(queue).getEntity();
         }
@@ -48,7 +48,7 @@ public class EntityQueueSet {
     }
 
     // retorna uma lista de entidades
-    public EntityList getEntityQueue(int queue){
+    public EntityList getEntityQueue(String queue){
         return this.entityQueue.get(queue);
     }
 }

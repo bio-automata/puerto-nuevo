@@ -3,6 +3,7 @@ package br.edu.ifmg.samuelterra.model.system.collections;
 import br.edu.ifmg.samuelterra.model.entities.Entity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
     EntityList
@@ -19,7 +20,7 @@ public class EntityList {
     public static int STACK = 2;
 
     private int policy;
-    private ArrayList<Entity> entityList;
+    private List<Entity> entityList;
 
     public EntityList(){
         this.policy = this.LIST;
@@ -52,9 +53,14 @@ public class EntityList {
 
     public Entity getEntity(int i){
         if(this.policy==this.LIST){
-            Entity entity = this.entityList.get(i);
-            this.entityList.remove(i);
-            return entity;
+            if(this.entityList.size()>=i){
+                Entity entity = this.entityList.get(i);
+                this.entityList.remove(i);
+                return entity;
+            }
+            else{
+                return null;
+            }
         }
         else if(this.policy==this.QUEUE){
             return this.dequeue();
@@ -66,13 +72,28 @@ public class EntityList {
     }
 
     private Entity dequeue(){
-        Entity entity = this.entityList.get(0);
-        this.entityList.remove(0);
-        return entity;
+        if(this.entityList.size()>0){
+            Entity entity = this.entityList.get(0);
+            this.entityList.remove(0);
+            return entity;
+        }
+        else{
+            return null;
+        }
     }
     private Entity unstack(){
-        Entity entity = this.entityList.get(this.entityList.size()-1);
-        this.entityList.remove(this.entityList.size()-1);
-        return entity;
+        if(this.entityList.size()>0){
+            Entity entity = this.entityList.get(this.entityList.size()-1);
+            this.entityList.remove(this.entityList.size()-1);
+            return entity;
+        }
+        else{
+            return null;
+        }
+    }
+
+    //retorna se possui entidades
+    public boolean available(){
+        return this.entityList.size()>0;
     }
 }
