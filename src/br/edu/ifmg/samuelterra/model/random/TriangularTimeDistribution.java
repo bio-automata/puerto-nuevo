@@ -1,14 +1,14 @@
 package br.edu.ifmg.samuelterra.model.random;
 
 
-public class TriangularDistribution {
+public class TriangularDistributionGen {
 
     private Double a;
     private Double b;
     private Double c;
     private Random random;
 
-    public TriangularDistribution(Double a, Double b, Double c, Random random) {
+    public TriangularDistributionGen(Double a, Double b, Double c, Random random) {
         this.a = a;
         this.b = b;
         this.c = c;

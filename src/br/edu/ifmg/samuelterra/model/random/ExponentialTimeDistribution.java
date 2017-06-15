@@ -4,11 +4,11 @@ package br.edu.ifmg.samuelterra.model.random;
  * Created by samuel on 12/06/17.
  */
 public class ExponentialDistributionGen{
-    Double lamb;
+    Double lambda;
     private Random random;
 
-    public ExponentialDistributionGen(Double lamb, Random random){
-        this.lamb = lamb;
+    public ExponentialDistributionGen(Double lambda, Random random){
+        this.lambda = lambda;
         this.random = random;
     }
 
@@ -16,7 +16,11 @@ public class ExponentialDistributionGen{
         return this.random.exponential(this.lambda);
     }
 
-    public void setLambda(Double lamb) {
-        this.lamb = lamb;
+    public void setLambda(Double lambda) {
+        this.lambda = lambda;
+    }
+
+    public Double get() {
+        return this.random.exponential(this.lambda);
     }
 }
