@@ -11,17 +11,12 @@ import java.util.HashMap;
  */
 public class EndEmptyReturningEvent extends Event{
 
-    public EndEmptyReturningEvent(double a, double b, double c){
-        this.distribution = RandomConstants.TRIANGULAR;
+    public EndEmptyReturningEvent(){
 
-        this.distributionParams.put("a",a);
-        this.distributionParams.put("b",b);
-        this.distributionParams.put("c",c);
     }
 
-    @Override
     public void execute(Systema system){
-        system.setClock(this.getDurationTime());
+        system.setClock(this.getOccurrenceTime());
 
 
     }

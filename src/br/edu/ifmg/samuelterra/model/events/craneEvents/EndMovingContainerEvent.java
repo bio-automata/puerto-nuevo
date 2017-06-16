@@ -19,14 +19,11 @@ public class EndMovingContainerEvent extends Event{
         system.setClock(this.getOccurrenceTime());
 
         if (system.getEntityQueueSet().getEntityQueue("cart").available()){
-
             Cart cart = (Cart) system.getEntityQueueSet().getEntity("cart");
-
 
             Event event = new EndLoadingCartEvent();
             event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("loading cart"));
             system.getFutureEventList().addEvent(event);
-
         }
         else{
             system.getEntityQueueSet().addEntity("crane waiting cart", crane);

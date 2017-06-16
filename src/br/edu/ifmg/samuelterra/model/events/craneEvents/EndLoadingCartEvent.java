@@ -1,6 +1,9 @@
 package br.edu.ifmg.samuelterra.model.events.craneEvents;
 
+import br.edu.ifmg.samuelterra.model.entities.Crane;
+import br.edu.ifmg.samuelterra.model.entities.vehicles.Cart;
 import br.edu.ifmg.samuelterra.model.events.Event;
+import br.edu.ifmg.samuelterra.model.events.vehicleEvents.EndMovingLoadCartEvent;
 import br.edu.ifmg.samuelterra.model.random.RandomConstants;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
@@ -8,24 +11,25 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
  */
 public class EndLoadingCartEvent extends Event{
-    public EndLoadingCartEvent(){
+    private Crane crane;
+    private Cart cart;
 
+    public EndLoadingCartEvent(Crane crane, Cart cart){
+        this.crane = crane;
+        this.cart = cart;
     }
 
-    @Override
     public void execute(Systema system){
     	//atualisa o relógio do sistema
-        //system.setClock(this.getOcorrenceTime());
-
-        //altera váriaveis do sistema e das entidades
-        //decrementa contaier do navio
-
-    	//sorteia a duração dos eventos desencadeados
-		//agenda na FEL os eventos desencadeados
-        //system.agendFutureEvent(event);
+        system.setClock(this.getOccurrenceTime());
 
 
+        Event event = new EndEmptyReturningEvent();
+        event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("EmptyReturning"));
+        system.getFutureEventList().addEvent(event);
 
-        
+        event = new EndMovingLoadCartEvent(cart);
+        event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("MovingLoadCart"));
+        system.getFutureEventList().addEvent(event);
     }
 }

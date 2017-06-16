@@ -3,7 +3,9 @@ package br.edu.ifmg.samuelterra.model.random.time;
 import br.edu.ifmg.samuelterra.model.system.Systema;
 
 /**
- * Created by dicus on 15/06/17.
+   esta classe é um modelo para
+   uma implementação de uma distribuição de tempo
+
  */
 public abstract class TimeDistribution {
     protected Systema system;

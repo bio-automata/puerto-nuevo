@@ -7,8 +7,8 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 /**
  * Created by dicus on 11/06/17.
  */
-public class MovingLoadCartEvent extends Event{
-    public MovingLoadCartEvent(double a, double b, double c){
+public class EndMovingEmptyCartEvent extends Event{
+    public EndMovingEmptyCartEvent(double a, double b, double c){
         this.distribution = RandomConstants.TRIANGULAR;
 
         this.distributionParams.put("a",a);
@@ -17,6 +17,10 @@ public class MovingLoadCartEvent extends Event{
     }
 
     public void execute(Systema system){
-        system.setClock(this.getDurationTime());
+        system.incrementClock(this.getDurationTime());
+
+        //decrementa contaier do navio
+
+        //
     }
 }

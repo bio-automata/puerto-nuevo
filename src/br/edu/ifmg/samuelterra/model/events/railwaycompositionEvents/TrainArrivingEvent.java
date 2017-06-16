@@ -10,13 +10,11 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
  */
 
 public class TrainArrivingEvent extends Event{
-    public TrainArrivingEvent(double lambda){
-        this.distribution = RandomConstants.EXPOENENTIAL;
+    public TrainArrivingEvent(){
 
-        this.distributionParams.put("lambda",lambda);
     }
 
     public void execute(Systema system){
-        system.setClock(this.getDurationTime());
+        system.setClock(this.getOccurrenceTime());
     }
 }

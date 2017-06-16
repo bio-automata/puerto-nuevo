@@ -116,7 +116,6 @@ public class Systema {
         this.timeFactory = timeFactory;
     }
 
-
     public RandomTimeGenerator getRandomTimeGenerator(){
         return this.randomTimeGenerator;
     }

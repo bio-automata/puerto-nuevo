@@ -11,15 +11,13 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
  */
 
 public class TrainDepartureEvent extends Event{
-    public TrainDepartureEvent(double a, double b, double c){
-        this.distribution = RandomConstants.TRIANGULAR;
+    public TrainDepartureEvent(){
 
-        this.distributionParams.put("a",a);
-        this.distributionParams.put("b",b);
-        this.distributionParams.put("c",c);
     }
 
     public void execute(Systema system){
-        system.setClock(this.getDurationTime());
+        system.setClock(this.getOccurrenceTime());
+
+
     }
 }
