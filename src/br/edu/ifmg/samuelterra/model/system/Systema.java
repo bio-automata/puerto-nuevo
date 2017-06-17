@@ -100,7 +100,7 @@ public class Systema {
         this.variables.put(variable, this.variables.get(variable)+value);
     }
 
-    public Double getVariable(Integer variable){
+    public Double getVariable(String variable){
         if (this.variables.containsKey(variable)){
             return this.variables.get(variable);
         }

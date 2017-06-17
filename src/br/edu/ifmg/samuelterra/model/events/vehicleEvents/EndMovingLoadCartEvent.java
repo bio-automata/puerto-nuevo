@@ -18,6 +18,15 @@ public class EndMovingLoadCartEvent extends Event{
     public void execute(Systema system){
         system.setClock(this.getOccurrenceTime());
 
+        if (system.getEntityQueueSet().getEntityQueue("RTG").available()){
+
+        }
+        else if (system.getEntityQueueSet().getEntityQueue("reach").available()){
+
+        }
+        else{
+            system.getEntityQueueSet().addEntity("cart waiting unload", cart);
+        }
 
     }
 }

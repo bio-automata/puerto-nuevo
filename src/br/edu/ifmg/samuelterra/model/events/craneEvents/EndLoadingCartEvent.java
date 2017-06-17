@@ -24,7 +24,7 @@ public class EndLoadingCartEvent extends Event{
         system.setClock(this.getOccurrenceTime());
 
 
-        Event event = new EndEmptyReturningEvent();
+        Event event = new EndEmptyReturningEvent(crane);
         event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("EmptyReturning"));
         system.getFutureEventList().addEvent(event);
 

@@ -10,8 +10,13 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
 
  */
 public class EndMovingContainerEvent extends Event{
-    public EndMovingContainerEvent(){
+    private Crane crane;
+    private Cart cart;
 
+
+    public EndMovingContainerEvent(){
+        this.crane = crane;
+        this.cart = cart;
     }
 
     public void execute(Systema system, Crane crane){
@@ -21,7 +26,7 @@ public class EndMovingContainerEvent extends Event{
         if (system.getEntityQueueSet().getEntityQueue("cart").available()){
             Cart cart = (Cart) system.getEntityQueueSet().getEntity("cart");
 
-            Event event = new EndLoadingCartEvent();
+            Event event = new EndLoadingCartEvent(this.crane, this.cart);
             event.setOccurrenceTime(this.getOccurrenceTime()+system.getRandomTimeGenerator().getTime("loading cart"));
             system.getFutureEventList().addEvent(event);
         }

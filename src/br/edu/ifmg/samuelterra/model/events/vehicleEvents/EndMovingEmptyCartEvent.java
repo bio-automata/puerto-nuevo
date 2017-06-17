@@ -8,12 +8,8 @@ import br.edu.ifmg.samuelterra.model.system.Systema;
  * Created by dicus on 11/06/17.
  */
 public class EndMovingEmptyCartEvent extends Event{
-    public EndMovingEmptyCartEvent(double a, double b, double c){
-        this.distribution = RandomConstants.TRIANGULAR;
+    public EndMovingEmptyCartEvent(){
 
-        this.distributionParams.put("a",a);
-        this.distributionParams.put("b",b);
-        this.distributionParams.put("c",c);
     }
 
     public void execute(Systema system){
